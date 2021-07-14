@@ -36,6 +36,7 @@ function Navigation() {
 const styles = {
     container: {
         maxWidth: 560,
+        width: '100%',
         margin: 'auto',
         height: 56,
         display: 'flex',
