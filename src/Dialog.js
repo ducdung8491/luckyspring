@@ -1,9 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion"
 
-const styles = {
-
-}
-
 function Dialog({ children, isOpen, onClose, delay }) {
     return (
         <AnimatePresence exitBeforeEnter>
