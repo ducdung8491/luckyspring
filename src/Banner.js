@@ -5,7 +5,7 @@ function Banner() {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            height: 124,
+            height: 96,
             padding: '0 16px',
             boxSizing: 'border-box'
         }}>
