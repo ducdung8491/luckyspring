@@ -9,13 +9,15 @@ function Dialog({ children, isOpen, onClose, delay }) {
                         position: 'fixed',
                         top: 0,
                         left: 0,
-                        width: '100%',
-                        height: '100%',
+                        width: '100vw',
+                        height: '100vh',
                         background: 'rgba(0, 0, 0, 0.5)',
                         zIndex: 7,
                         display: 'flex',
                         justifyContent: 'center',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        padding: 16,
+                        boxSizing: 'border-box'
                     }}
                     variants={{
                         visible: {
