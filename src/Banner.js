@@ -5,7 +5,7 @@ function Banner() {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            height: 'auth',
+            height: 124,
             padding: '0 16px',
             boxSizing: 'border-box'
         }}>
@@ -13,7 +13,8 @@ function Banner() {
                 srcSet="banner.png"
                 alt="Banner"
                 style={{
-                    maxWidth: '100%'
+                    maxWidth: '100%',
+                    maxHeight: '100%'
                 }} />
         </div>
     )

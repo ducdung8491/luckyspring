@@ -7,8 +7,11 @@ import Banner from './Banner'
 import Countdown from './Countdown'
 import Notify from './Notify'
 import Navigation from './Navigation';
+import Dialog from './Dialog';
+import Button from './Button'
 
 function App() {
+  const [isOpenAddCount, setIsOpenAddCount] = useState(true)
   const [a, setA] = useState([])
   const [data, setData] = useState({ id: null, i: 0 })
   const sleep = (ms) => new Promise(res => setTimeout(res, ms))
@@ -17,6 +20,9 @@ function App() {
       const { id, i } = data
       if (!a[i]) {
         return
+      }
+      if (i === (a.length - 1)) {
+        setIsOpenAddCount(true)
       }
       await sleep(a[i])
       setData({
@@ -100,6 +106,36 @@ function App() {
       }}>
         <Navigation />
       </div>
+      <Dialog isOpen={isOpenAddCount} onClose={() => setIsOpenAddCount(false)} delay={0.2}>
+        <div
+          style={{
+            padding: 24
+          }}
+        >
+          <img
+            srcSet="gift1.png"
+            alt="Times"
+            style={{
+              width: 56,
+              height: 56,
+              marginBottom: 16
+            }}
+          />
+          <h3
+            style={{
+              margin: '0 0 4px 0',
+              color: '#fb401c'
+            }}
+          >Lươt quay may mắn</h3>
+          <p
+            style={{
+              color: '#586069',
+              marginTop: 8
+            }}
+          >Bạn may mắn nhận được một lượt quay, sử dụng ngay để có được những phần quà hấp dẫn.</p>
+          <Button text="Quay luôn" onClick={() => setIsOpenAddCount(false)} />
+        </div>
+      </Dialog>
     </div>
   );
 }
