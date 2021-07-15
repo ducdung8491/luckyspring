@@ -1,5 +1,4 @@
 import useCountdown from "@bradgarropy/use-countdown"
-import { AnimatePresence, motion } from "framer-motion"
 
 function Countdown({ complete }) {
     const countdown = useCountdown({
@@ -20,33 +19,10 @@ function Countdown({ complete }) {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <AnimatePresence>
-                    <motion.h1
-                        style={{
-                            margin: 0,
-                            fontSize: 18
-                        }}
-                        key={countdown.seconds}
-                        exit={{
-                            opacity: 0,
-                            position: "absolute"
-                        }}
-                        initial={{
-                            opacity: 0
-                        }}
-                        animate={{
-                            opacity: 1
-                        }}
-                        transition={{
-                            ease: 'easeIn',
-                            duration: 0
-                        }}>
-                        00:{countdown.formatted}
-                    </motion.h1>
-                </AnimatePresence>
-            </div>
+                alignItems: 'center',
+                margin: 0,
+                fontSize: 18
+            }}>00:{countdown.formatted}</div>
             <p style={{
                 margin: 0,
                 fontSize: 14
