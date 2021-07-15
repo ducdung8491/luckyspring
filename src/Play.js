@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-function Play({ change }) {
+function Play({ start, disable }) {
     return (
         <motion.div
             style={{
@@ -15,7 +15,12 @@ function Play({ change }) {
                 duration: 0.4,
                 ease: "easeInOut"
             }}
-            onClick={change}>
+            onClick={() => {
+                if (disable) {
+                    return
+                }
+                start()
+            }}>
             <motion.img
                 initial={{
                     rotate: -16
