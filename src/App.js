@@ -74,7 +74,6 @@ function App() {
           display: "grid",
           gridTemplateColumns: 'repeat(3, 1fr)',
           gridTemplateRows: 'repeat(3, 1fr)',
-          overflow: 'hidden',
           margin: 0,
           gap: 8,
           padding: 32,
