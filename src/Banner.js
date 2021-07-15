@@ -7,7 +7,8 @@ function Banner() {
             width: '100%',
             height: 96,
             padding: '0 16px',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            overflow: "hidden"
         }}>
             <img
                 srcSet="banner.png"

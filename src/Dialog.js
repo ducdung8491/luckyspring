@@ -21,7 +21,10 @@ function Dialog({ children, isOpen, onClose, delay }) {
                     }}
                     variants={{
                         visible: {
-                            opacity: 1
+                            opacity: 1,
+                            transition: {
+                                delay: delay ?? 0
+                            }
                         },
                         hidden: {
                             opacity: 0

@@ -10,7 +10,10 @@ function Countdown({ complete }) {
     return (
         <div style={{
             color: 'white',
-            padding: 16
+            padding: 16,
+            height: 70,
+            overflow: 'hidden',
+            boxSizing: 'border-box'
         }}>
             <div style={{
                 width: '100%',
@@ -41,7 +44,7 @@ function Countdown({ complete }) {
                         }}
                         transition={{
                             ease: 'easeIn',
-                            duration: 0.2
+                            duration: 0.1
                         }}>
                         00:{countdown.formatted}
                     </motion.h1>

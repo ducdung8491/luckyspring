@@ -64,12 +64,23 @@ function App() {
       <Banner />
       <Countdown />
       <div
-        className="container"
         initial="hidden"
         animate="visible"
         style={{
-          backgroundImage: 'url(./boxbg.png)',
-          backgroundSize: 'contain'
+          backgroundImage: 'url(boxbg.png)',
+          backgroundSize: 'contain',
+          width: 360,
+          height: 360,
+          display: "grid",
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridTemplateRows: 'repeat(3, 1fr)',
+          overflow: 'hidden',
+          margin: 0,
+          gap: 8,
+          padding: 32,
+          boxSizing: 'border-box',
+          borderRadius: 6,
+          overflow: 'hidden'
         }}
       >
         <Prize selected={data.id === 0}>
@@ -106,7 +117,7 @@ function App() {
       }}>
         <Navigation />
       </div>
-      <Dialog isOpen={isOpenAddCount} onClose={() => setIsOpenAddCount(false)} delay={0.2}>
+      <Dialog isOpen={isOpenAddCount} onClose={() => setIsOpenAddCount(false)} delay={1}>
         <div
           style={{
             padding: 24
@@ -136,7 +147,7 @@ function App() {
           <Button text="Quay luôn" onClick={() => setIsOpenAddCount(false)} />
         </div>
       </Dialog>
-    </div>
+    </div >
   );
 }
 

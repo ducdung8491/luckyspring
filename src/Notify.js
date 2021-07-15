@@ -4,18 +4,23 @@ import { useEffect, useState } from "react"
 function Notify() {
     const [i, setI] = useState(0)
     const notifies = [
-        'Chúc mừng Dũng đã trúng CPhone 20',
-        'Chúc mừng Dũng đã trúng SH 150i',
-        'Chúc mừng Dũng đã trúng máy ảnh Canon Z9000',
-        'Chúc mừng Dũng đã trúng CPhone 20',
-        'Chúc mừng Dũng đã trúng CPhone 21',
-        'Chúc mừng Dũng đã trúng CPhone 22',
-        'Chúc mừng Dũng đã trúng CPhone 23',
+        'Chúc mừng 0987778*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0987237*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0918787*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0923453*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0978812*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0917283*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0913857*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0983499*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0982009*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0919919*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0922343*** đã trúng 100.000 thẻ nạp',
+        'Chúc mừng 0918887*** đã trúng 100.000 thẻ nạp',
     ]
     useEffect(() => {
         const id = setTimeout(() => {
             setI((i + 1) % 7)
-        }, 1800)
+        }, 4000)
         return () => {
             clearTimeout(id)
         }
@@ -28,18 +33,19 @@ function Notify() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            color: 'white'
+            color: 'white',
+            overflow: 'hidden'
         }}>
             <AnimatePresence>
                 <motion.div
                     key={i}
                     exit={{
-                        y: 16,
+                        y: 6,
                         opacity: 0,
                         position: "absolute"
                     }}
                     initial={{
-                        y: -16,
+                        y: -6,
                         opacity: 0
                     }}
                     animate={{
@@ -48,7 +54,7 @@ function Notify() {
                     }}
                     transition={{
                         ease: 'easeIn',
-                        duration: 0.8
+                        duration: 0.2
                     }}>
                     {notifies[i]}
                 </motion.div>
