@@ -9,6 +9,7 @@ import Notify from './Notify'
 import Navigation from './Navigation';
 import Dialog from './Dialog';
 import Button from './Button'
+import PinCount from './PinCount';
 
 function App() {
   const [isOpenAddCount, setIsOpenAddCount] = useState(true)
@@ -63,6 +64,7 @@ function App() {
       </div>
       <Banner />
       <Countdown />
+      <PinCount count={1} />
       <div
         initial="hidden"
         animate="visible"

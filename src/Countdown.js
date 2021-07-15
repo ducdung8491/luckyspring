@@ -1,6 +1,6 @@
 import useCountdown from "@bradgarropy/use-countdown"
 
-function Countdown({ complete }) {
+function Countdown({ complete, count }) {
     const countdown = useCountdown({
         minutes: 5,
         format: 'mm:ss',
@@ -9,24 +9,12 @@ function Countdown({ complete }) {
     return (
         <div style={{
             color: 'white',
-            padding: 16,
-            height: 70,
+            padding: 8,
             overflow: 'hidden',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            textAlign: 'center'
         }}>
-            <div style={{
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                margin: 0,
-                fontSize: 18
-            }}>00:{countdown.formatted}</div>
-            <p style={{
-                margin: 0,
-                fontSize: 14
-            }}>Thời gian của bạn sắp hết, nhanh tay trúng ngay SH</p>
+            Thời gian còn <b style={{ fontSize: 18 }}>00:{countdown.formatted}</b> nhanh tay nhận ngay giải thưởng
         </div>
     )
 }
