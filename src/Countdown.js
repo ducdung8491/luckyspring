@@ -30,21 +30,18 @@ function Countdown({ complete }) {
                         }}
                         key={countdown.seconds}
                         exit={{
-                            y: 6,
                             opacity: 0,
                             position: "absolute"
                         }}
                         initial={{
-                            y: -6,
                             opacity: 0
                         }}
                         animate={{
-                            y: 0,
                             opacity: 1
                         }}
                         transition={{
                             ease: 'easeIn',
-                            duration: 0.1
+                            duration: 0
                         }}>
                         00:{countdown.formatted}
                     </motion.h1>
