@@ -117,34 +117,28 @@ function App() {
         <Navigation />
       </div>
       <Dialog isOpen={isOpenAddCount} onClose={() => setIsOpenAddCount(false)} delay={1}>
-        <div
+        <img
+          srcSet="gift1.png"
+          alt="Times"
           style={{
-            padding: 24
+            width: 56,
+            height: 56,
+            marginBottom: 16
           }}
-        >
-          <img
-            srcSet="gift1.png"
-            alt="Times"
-            style={{
-              width: 56,
-              height: 56,
-              marginBottom: 16
-            }}
-          />
-          <h3
-            style={{
-              margin: '0 0 4px 0',
-              color: '#fb401c'
-            }}
-          >Lươt quay may mắn</h3>
-          <p
-            style={{
-              color: '#586069',
-              marginTop: 8
-            }}
-          >Bạn may mắn nhận được một lượt quay, sử dụng ngay để có được những phần quà hấp dẫn.</p>
-          <Button text="Quay luôn" onClick={() => setIsOpenAddCount(false)} />
-        </div>
+        />
+        <h3
+          style={{
+            margin: '0 0 4px 0',
+            color: '#fb401c'
+          }}
+        >Lươt quay may mắn</h3>
+        <p
+          style={{
+            color: '#586069',
+            marginTop: 8
+          }}
+        >Bạn may mắn nhận được một lượt quay, sử dụng ngay để có được những phần quà hấp dẫn.</p>
+        <Button text="Quay luôn" onClick={() => setIsOpenAddCount(false)} />
       </Dialog>
     </div >
   );

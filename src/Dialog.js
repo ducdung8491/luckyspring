@@ -39,6 +39,7 @@ function Dialog({ children, isOpen, onClose, delay }) {
                             flex: '1 1',
                             width: 'calc(100% - 32px)',
                             maxWidth: 480,
+                            maxHeight: 'calc(100% - 32px)',
                             margin: '0 auto',
                             padding: 16,
                             background: 'white',
@@ -61,17 +62,6 @@ function Dialog({ children, isOpen, onClose, delay }) {
                             }
                         }}
                     >
-                        {/* <div
-                            onClick={onClose}
-                            style={{
-                                position: 'absolute',
-                                top: 0,
-                                right: 0,
-                                padding: 8
-                            }}
-                        >
-                            <img srcSet="close.png" alt="Close" style={{ width: 16, height: 16 }} />
-                        </div> */}
                         {children}
                     </motion.div>
                 </motion.div>
