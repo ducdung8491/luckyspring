@@ -7,8 +7,8 @@ function Play({ start, disable }) {
                 backgroundSize: 'contain',
                 backgroundImage: 'url(./play.png)'
             }}
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1.1 }}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
             transition={{
                 repeat: Infinity,
                 repeatType: 'reverse',

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Prize from './Prize'
 import Gift from './Gift'
 import Play from './Play'
+import Light from './Light'
 
 function Pin({ steps, count, onCompleted }) {
     const [isRun, setIsRun] = useState(false)
@@ -32,6 +33,72 @@ function Pin({ steps, count, onCompleted }) {
         setA(steps)
         setIsRun(true)
     }
+    const lightMap = [
+        {
+            x: 2,
+            y: 2
+        },
+        {
+            x: '25%',
+            y: 0
+        },
+        {
+            x: '50%',
+            y: 0
+        },
+        {
+            x: '75%',
+            y: 0
+        },
+        {
+            x: 'calc(100% - 2px)',
+            y: 2
+        },
+        {
+            x: '100%',
+            y: '25%'
+        },
+        {
+            x: '100%',
+            y: '50%'
+        },
+        {
+            x: '100%',
+            y: '75%'
+        },
+        {
+            x: 'calc(100% - 2px)',
+            y: 'calc(100% - 2px)'
+        },
+        {
+            x: '75%',
+            y: '100%'
+        },
+        {
+            x: '50%',
+            y: '100%'
+        },
+        {
+            x: '25%',
+            y: '100%'
+        },
+        {
+            x: 2,
+            y: 'calc(100% - 2px)'
+        },
+        {
+            x: '0',
+            y: '75%'
+        },
+        {
+            x: 0,
+            y: '50%'
+        },
+        {
+            x: 0,
+            y: '25%'
+        }
+    ]
     return (
         <div
             initial="hidden"
@@ -49,11 +116,12 @@ function Pin({ steps, count, onCompleted }) {
                 padding: 32,
                 boxSizing: 'border-box',
                 borderRadius: 6,
-                overflow: 'hidden'
+                overflow: 'hidden',
+                position: 'relative'
             }}
         >
             <Prize selected={data.id === 0}>
-                <Gift image="gift1.png" />
+                <Gift style={{ borderRadius: '50%', transform: 'scale(0.9)' }} image="lostturn.jpeg" />
             </Prize>
             <Prize selected={data.id === 1}>
                 <Gift image="gift2.png" />
@@ -77,6 +145,18 @@ function Pin({ steps, count, onCompleted }) {
             <Prize selected={data.id === 4}>
                 <Gift image="gift6.png" />
             </Prize>
+            <div style={{
+                position: 'absolute',
+                cursor: 'none',
+                width: 'calc(100% - 22px)',
+                height: 'calc(100% - 22px)',
+                top: 8,
+                left: 8
+            }}>
+                {lightMap.map((i, j) => (
+                    <Light key={j} {...i} delay={j * 0.02} />
+                ))}
+            </div>
         </div>
     )
 }
