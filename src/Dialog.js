@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion"
 
-function Dialog({ children, isOpen, onClose, delay }) {
+function Dialog({ children, isOpen, delay }) {
     return (
         <AnimatePresence exitBeforeEnter>
             {isOpen && (

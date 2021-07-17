@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 
 function Light({ x, y, delay }) {
-    console.log(delay)
     return (
         <motion.div
             style={{

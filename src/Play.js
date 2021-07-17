@@ -37,10 +37,10 @@ function Play({ start, disable }) {
                 srcSet="hand.png"
                 alt="Hand"
                 style={{
-                    width: 40,
-                    height: 40,
-                    x: 56,
-                    y: 56
+                    width: 36,
+                    height: 36,
+                    x: 38,
+                    y: 42
                 }} />
         </motion.div>
     )
