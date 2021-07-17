@@ -7,7 +7,7 @@ function PinCount({count}) {
             color: 'white',
             background: 'rgba(255, 255, 255, 0.1)',
             borderRadius: '0 0 16px 16px',
-            border: '2px solid #e8693c',
+            border: '2px solid #ff9861',
             borderTop: 'none'
         }}>Bạn còn {count} lượt quay</div>
     )

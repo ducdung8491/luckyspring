@@ -9,6 +9,12 @@ import Button from './Button'
 import PinCount from './PinCount';
 import Pin from './Pin';
 
+// const scripts = [
+//   {
+    
+//   }
+// ]
+
 function App() {
   const [count, setCount] = useState(2)
   const [isOpenAddCount, setIsOpenAddCount] = useState(true)

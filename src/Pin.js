@@ -106,8 +106,8 @@ function Pin({ steps, count, onCompleted }) {
             style={{
                 backgroundImage: 'url(boxbg.png)',
                 backgroundSize: 'contain',
-                width: 360,
-                height: 360,
+                width: 300,
+                height: 300,
                 display: "grid",
                 gridTemplateColumns: 'repeat(3, 1fr)',
                 gridTemplateRows: 'repeat(3, 1fr)',
@@ -116,7 +116,6 @@ function Pin({ steps, count, onCompleted }) {
                 padding: 32,
                 boxSizing: 'border-box',
                 borderRadius: 6,
-                overflow: 'hidden',
                 position: 'relative'
             }}
         >
