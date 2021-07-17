@@ -147,10 +147,10 @@ function Pin({ steps, count, onCompleted }) {
             <div style={{
                 position: 'absolute',
                 cursor: 'none',
-                width: 'calc(100% - 22px)',
-                height: 'calc(100% - 22px)',
-                top: 8,
-                left: 8
+                width: 'calc(100% - 17px)',
+                height: 'calc(100% - 17px)',
+                top: 5,
+                left: 5
             }}>
                 {lightMap.map((i, j) => (
                     <Light key={j} {...i} delay={j * 0.02} />
