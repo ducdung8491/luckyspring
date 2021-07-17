@@ -49,8 +49,8 @@ function App() {
       </div>
       <Banner />
       <Countdown />
-      <PinCount count={count} />
       <Pin steps={scripts[sid]} count={count} onCompleted={pinComplete} />
+      <PinCount count={count} />
       <div style={{
         position: 'absolute',
         bottom: 0,
