@@ -146,7 +146,7 @@ function Pin({ steps, count, onCompleted }) {
             </Prize>
             <div style={{
                 position: 'absolute',
-                cursor: 'none',
+                pointerEvents: 'none',
                 width: 'calc(100% - 17px)',
                 height: 'calc(100% - 17px)',
                 top: 5,
