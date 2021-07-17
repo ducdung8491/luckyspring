@@ -41,7 +41,7 @@ function App() {
   const [script] = useState(randomScript())
   const [count, setCount] = useState(script.steps.length)
   const [step, setStep] = useState(0)
-  const [openBox, setOpenbox] = useState('gift_card')
+  const [openBox, setOpenbox] = useState('add_turn')
   const pinComplete = useCallback((id) => {
     if (id === 0) {
       setOpenbox('good_luck')
