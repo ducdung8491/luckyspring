@@ -43,10 +43,11 @@ function App() {
   const [step, setStep] = useState(0)
   const [openBox, setOpenbox] = useState('add_turn')
   const pinComplete = useCallback((id) => {
+    console.log(id)
     if (id === 0) {
       setOpenbox('good_luck')
     }
-    if (id === 3 || id === 6) {
+    if (id === 2 || id === 5) {
       setOpenbox('gift_card')
     }
     setCount(c => c - 1)
