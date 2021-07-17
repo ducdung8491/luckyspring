@@ -138,6 +138,15 @@ function GiftCard({ open, onClose }) {
             duration: 6
           }}
           src="light.png" alt="Light" />
+        <img
+          style={{
+            position: 'absolute',
+            width: 240,
+            top: 0,
+            left: '50%',
+            transform: 'translate(-50%, -100%)'
+          }}
+          srcSet="congrat.png" alt="Coin" />
         <div style={{
           width: 'calc(100% - 48px)',
           height: 'calc(100% - 48px)',
@@ -197,7 +206,7 @@ function GiftCard({ open, onClose }) {
           style={{
             position: 'absolute',
             width: '100%',
-            top: 80,
+            top: 120,
             left: 0,
             transform: 'translate(0, -50%)'
           }}
