@@ -43,7 +43,6 @@ function App() {
   const [step, setStep] = useState(0)
   const [openBox, setOpenbox] = useState('add_turn')
   const pinComplete = useCallback((id) => {
-    console.log(id)
     if (id === 0) {
       setOpenbox('good_luck')
     }
@@ -53,6 +52,7 @@ function App() {
     setCount(c => c - 1)
     setStep(s => s + 1)
   }, [])
+  console.log(openBox)
   return (
     <>
       <div style={{
@@ -182,6 +182,7 @@ function GiftCard({ open, onClose }) {
           }}
           srcSet="goldbox.png" alt="Coin" />
         <motion.img
+          onClick={onClose}
           style={{
             position: 'absolute',
             left: '50%',
@@ -203,13 +204,13 @@ function GiftCard({ open, onClose }) {
           }}
           srcSet="receive.png" alt="Coin" />
         <img
-          onClick={onClose}
           style={{
             position: 'absolute',
             width: '100%',
             top: 120,
             left: 0,
-            transform: 'translate(0, -50%)'
+            transform: 'translate(0, -50%)',
+            pointerEvents: 'visible'
           }}
           srcSet="gift3.png" alt="Card" />
       </div>
