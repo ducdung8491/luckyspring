@@ -50,7 +50,7 @@ function App() {
   const [script] = useState(randomScript())
   const [count, setCount] = useState(script.count)
   const [step, setStep] = useState(0)
-  const [openBox, setOpenbox] = useState('gift_card')
+  const [openBox, setOpenbox] = useState('add_turn')
   const pinComplete = useCallback((id) => {
     if (id === 0) {
       setOpenbox('good_luck')
@@ -237,7 +237,7 @@ function GiftCard({ open, onClose }) {
         <img
           style={{
             position: 'absolute',
-            height: 156,
+            height: 120,
             bottom: 120,
             left: '50%',
             transform: 'translate(-50%, 0)',
