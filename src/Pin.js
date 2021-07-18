@@ -17,6 +17,7 @@ function Pin({ steps, count, onCompleted }) {
             }
             if (i === (a.length - 1)) {
                 onCompleted(id)
+                await sleep(1000)
                 setIsRun(false)
                 return
             }

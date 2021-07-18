@@ -1,14 +1,8 @@
-.container {
-  width: 360px;
-  height: 360px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  overflow: hidden;
-  margin: 0;
-  gap: 8px;
-  padding: 32px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
+@keyframes play {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
 }

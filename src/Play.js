@@ -2,28 +2,25 @@ import { motion } from 'framer-motion';
 
 function Play({ start, disable }) {
     const warn = new Audio('/warning.wav')
+    const style = (disable) => {
+        const s = {
+            backgroundSize: 'contain',
+            backgroundImage: 'url(./play.png)'
+        }
+        if (disable) {
+            return s
+        }
+        return {
+            ...s,
+            animationName: 'play',
+            animationDuration: '0.4s',
+            animationDirection: 'alternate',
+            animationIterationCount: 'infinite'
+        }
+    }
     return (
-        <motion.div
-            style={{
-                backgroundSize: 'contain',
-                backgroundImage: 'url(./play.png)'
-            }}
-            variants={{
-                small: {
-                    scale: 0.8
-                },
-                normal: {
-                    scale: 1
-                }
-            }}
-            initial="small"
-            animate="normal"
-            transition={{
-                repeat: Infinity,
-                repeatType: 'reverse',
-                duration: 0.4,
-                ease: "easeInOut"
-            }}
+        <div
+            style={style(disable)}
             onClick={() => {
                 if (disable) {
                     return
@@ -53,7 +50,7 @@ function Play({ start, disable }) {
                     x: 38,
                     y: 42
                 }} />
-        </motion.div>
+        </div>
     )
 }
 
