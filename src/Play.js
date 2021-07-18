@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 
 function Play({ start, disable }) {
+    const warn = new Audio('/warning.wav')
     return (
         <motion.div
             style={{
@@ -19,6 +20,7 @@ function Play({ start, disable }) {
                 if (disable) {
                     return
                 }
+                warn.play()
                 start()
             }}>
             <motion.img

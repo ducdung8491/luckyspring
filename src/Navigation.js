@@ -8,6 +8,16 @@ function RuleBox({ isOpen, onClose }) {
             <h3 style={{ marginTop: 0 }}>Luật chơi</h3>
             <p>Note: The max-width and max-height mixins only apply their maximum when the viewport is large enough to accommodate the specified value when accounting for the specified margin on either side. When the viewport is smaller, the dialog is sized such that the given margin is retained around the edges.</p>
             <p>Note: The max-width and max-height mixins only apply their maximum when the viewport is large enough to accommodate the specified value when accounting for the specified margin on either side. When the viewport is smaller, the dialog is sized such that the given margin is retained around the edges.</p>
+            <Button text="Đã hiểu" onClick={onClose} />
+        </Dialog>
+    )
+}
+
+function AdwardBox({ isOpen, onClose }) {
+    return (
+        <Dialog isOpen={isOpen} onClose={onClose}>
+            <h3 style={{ marginTop: 0 }}>Thể lệ</h3>
+            <p>Note: The max-width and max-height mixins only apply their maximum when the viewport is large enough to accommodate the specified value when accounting for the specified margin on either side. When the viewport is smaller, the dialog is sized such that the given margin is retained around the edges.</p>
             <p>Note: The max-width and max-height mixins only apply their maximum when the viewport is large enough to accommodate the specified value when accounting for the specified margin on either side. When the viewport is smaller, the dialog is sized such that the given margin is retained around the edges.</p>
             <Button text="Đã hiểu" onClick={onClose} />
         </Dialog>
@@ -15,7 +25,7 @@ function RuleBox({ isOpen, onClose }) {
 }
 
 function Navigation() {
-    const [isOpenRule, setIsOpenRule] = useState(false)
+    const [box, setBox] = useState(null)
     return (
         <>
             <div style={styles.container}>
@@ -23,12 +33,16 @@ function Navigation() {
                     <a href="tel:+84983275435"><img srcSet="call.png" alt="Call" style={{ width: 24, height: 24 }} /></a>
                 </div>
                 <div
-                    onClick={() => setIsOpenRule(true)}
+                    onClick={() => setBox('rule')}
                     style={styles.item}
                 >Thể lệ</div>
-                <div style={styles.item}>Giải thưởng</div>
+                <div
+                    onClick={() => setBox('adward')}
+                    style={styles.item}
+                >Giải thưởng</div>
             </div>
-            <RuleBox isOpen={isOpenRule} onClose={() => setIsOpenRule(false)} />
+            <RuleBox isOpen={box === 'rule'} onClose={() => setBox(null)} />
+            <AdwardBox isOpen={box === 'adward'} onClose={() => setBox(null)} />
         </>
     )
 }
