@@ -16,12 +16,21 @@ const step = (count) => {
 
 const scripts = [
   {
+    count: 1,
+    steps: [
+      step(33),
+      step(34)
+    ]
+  },
+  {
+    count: 2,
     steps: [
       step(37),
       step(34)
     ]
   },
   {
+    count: 3,
     steps: [
       step(37),
       step(37),
@@ -39,7 +48,7 @@ const randomScript = () => {
 
 function App() {
   const [script] = useState(randomScript())
-  const [count, setCount] = useState(script.steps.length)
+  const [count, setCount] = useState(script.count)
   const [step, setStep] = useState(0)
   const [openBox, setOpenbox] = useState('add_turn')
   const pinComplete = useCallback((id) => {
@@ -48,6 +57,10 @@ function App() {
     }
     if (id === 2 || id === 5) {
       setOpenbox('gift_card')
+    }
+    if (id === 4) {
+      setOpenbox('gift_1_turn')
+      setCount(c => c + 1)
     }
     setCount(c => c - 1)
     setStep(s => s + 1)
@@ -91,6 +104,7 @@ function App() {
           <Navigation />
         </div>
       </div >
+      <AddCountBox open={openBox === 'gift_1_turn'} count={1} onClose={() => setOpenbox(null)} />
       <AddCountBox open={openBox === 'add_turn'} count={count} onClose={() => setOpenbox(null)} />
       <GoodLuckBox open={openBox === 'good_luck'} count={count} onClose={() => setOpenbox(null)} />
       <GiftCard open={openBox === 'gift_card'} onClose={() => setOpenbox(null)} />
@@ -273,7 +287,7 @@ function AddCountBox({ open, count, onClose }) {
           marginTop: 8
         }}
       >Bạn may mắn nhận được {count} lượt quay, sử dụng ngay để có được những phần quà hấp dẫn.</p>
-      <Button text="Quay luôn" onClick={onClose} />
+      <Button text="Quay" onClick={onClose} />
     </Dialog>
   )
 }

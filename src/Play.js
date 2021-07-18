@@ -1,24 +1,23 @@
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 function Play({ start, disable }) {
-    const control = useAnimation()
     const warn = new Audio('/warning.wav')
-    useEffect(() => {
-        if (disable) {
-            return
-        }
-        control.start({
-            scale: 0.8
-        })
-    }, [control, disable])
     return (
         <motion.div
             style={{
                 backgroundSize: 'contain',
                 backgroundImage: 'url(./play.png)'
             }}
-            animate={control}
+            variants={{
+                small: {
+                    scale: 0.8
+                },
+                normal: {
+                    scale: 1
+                }
+            }}
+            initial="small"
+            animate="normal"
             transition={{
                 repeat: Infinity,
                 repeatType: 'reverse',
@@ -31,10 +30,6 @@ function Play({ start, disable }) {
                 }
                 warn.play()
                 start()
-                control.start({
-                    scale: 1
-                })
-                control.stop()
             }}>
             <motion.img
                 initial={{
