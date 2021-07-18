@@ -182,7 +182,10 @@ function GiftCard({ open, onClose }) {
           }}
           srcSet="goldbox.png" alt="Coin" />
         <motion.img
-          onClick={onClose}
+          onClick={() => {
+            onClose()
+            window.open('https://google.com', '_blank')
+          }}
           style={{
             position: 'absolute',
             left: '50%',
