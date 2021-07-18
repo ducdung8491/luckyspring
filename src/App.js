@@ -52,7 +52,6 @@ function App() {
     setCount(c => c - 1)
     setStep(s => s + 1)
   }, [])
-  console.log(openBox)
   return (
     <>
       <div style={{
