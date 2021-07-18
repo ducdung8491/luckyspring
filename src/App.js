@@ -50,7 +50,7 @@ function App() {
   const [script] = useState(randomScript())
   const [count, setCount] = useState(script.count)
   const [step, setStep] = useState(0)
-  const [openBox, setOpenbox] = useState('add_turn')
+  const [openBox, setOpenbox] = useState('gift_card')
   const pinComplete = useCallback((id) => {
     if (id === 0) {
       setOpenbox('good_luck')
@@ -168,8 +168,23 @@ function GiftCard({ open, onClose }) {
           position: 'absolute',
           top: 24,
           left: 24,
-          borderRadius: 24
-        }}></div>
+          borderRadius: 24,
+          padding: 16,
+          boxSizing: 'border-box'
+        }}>
+          <div style={{
+            height: 174,
+            overflowX: 'hidden',
+            overflowY: 'scroll'
+          }}>
+            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+          </div>
+        </div>
         <img
           style={{
             width: '100%',
@@ -202,8 +217,8 @@ function GiftCard({ open, onClose }) {
           style={{
             position: 'absolute',
             left: '50%',
-            bottom: 32,
-            width: '25%',
+            bottom: 24,
+            width: 96,
             x: '-50%'
           }}
           initial={{
@@ -216,16 +231,16 @@ function GiftCard({ open, onClose }) {
             repeat: Infinity,
             repeatType: 'reverse',
             ease: 'linear',
-            duration: 0.2
+            duration: 0.4
           }}
           srcSet="receive.png" alt="Coin" />
         <img
           style={{
             position: 'absolute',
-            width: '100%',
-            top: 120,
-            left: 0,
-            transform: 'translate(0, -50%)',
+            height: 156,
+            bottom: 120,
+            left: '50%',
+            transform: 'translate(-50%, 0)',
             pointerEvents: 'visible'
           }}
           srcSet="gift3.png" alt="Card" />
