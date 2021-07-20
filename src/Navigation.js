@@ -30,7 +30,7 @@ function Navigation() {
         <>
             <div style={styles.container}>
                 <div style={styles.item}>
-                    <a href="tel:+84983275435"><img srcSet="call.png" alt="Call" style={{ width: 24, height: 24 }} /></a>
+                    <a href="tel:+84983454667"><img srcSet="call.png" alt="Call" style={{ width: 24, height: 24 }} /></a>
                 </div>
                 <div
                     onClick={() => setBox('rule')}
