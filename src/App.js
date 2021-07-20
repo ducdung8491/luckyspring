@@ -62,8 +62,10 @@ function App() {
       setOpenbox('gift_1_turn')
       setCount(c => c + 1)
     }
-    setCount(c => c - 1)
     setStep(s => s + 1)
+  }, [])
+  const start = useCallback(() => {
+    setCount(c => c - 1)
   }, [])
   return (
     <>
@@ -93,7 +95,7 @@ function App() {
         </div>
         <Banner />
         <Countdown />
-        <Pin steps={script.steps[step]} count={count} onCompleted={pinComplete} />
+        <Pin steps={script.steps[step]} start={start} count={count} onCompleted={pinComplete} />
         <PinCount count={count} />
         <div style={{
           position: 'absolute',

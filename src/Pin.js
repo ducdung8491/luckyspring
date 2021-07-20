@@ -4,7 +4,7 @@ import Gift from './Gift'
 import Play from './Play'
 import Light from './Light'
 
-function Pin({ steps, count, onCompleted }) {
+function Pin({ steps, count, start: s, onCompleted }) {
     const [isRun, setIsRun] = useState(false)
     const [data, setData] = useState({ id: null, i: 0 })
     const [a, setA] = useState([])
@@ -33,6 +33,7 @@ function Pin({ steps, count, onCompleted }) {
         setData({ id: 0, i: 0 })
         setA(steps)
         setIsRun(true)
+        s()
     }
     const lightMap = [
         {
