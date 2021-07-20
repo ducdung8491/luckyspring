@@ -22,21 +22,21 @@ const scripts = [
       step(34)
     ]
   },
-  {
-    count: 2,
-    steps: [
-      step(37),
-      step(34)
-    ]
-  },
-  {
-    count: 3,
-    steps: [
-      step(37),
-      step(37),
-      step(34)
-    ]
-  }
+  // {
+  //   count: 2,
+  //   steps: [
+  //     step(37),
+  //     step(34)
+  //   ]
+  // },
+  // {
+  //   count: 3,
+  //   steps: [
+  //     step(37),
+  //     step(37),
+  //     step(34)
+  //   ]
+  // }
 ]
 
 const randomScript = () => {
@@ -164,7 +164,7 @@ function GiftCard({ open, onClose }) {
         <div style={{
           width: 'calc(100% - 48px)',
           height: 'calc(100% - 48px)',
-          backgroundColor: '#ffcdb7',
+          backgroundColor: 'white',
           position: 'absolute',
           top: 24,
           left: 24,
