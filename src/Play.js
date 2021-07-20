@@ -15,7 +15,8 @@ function Play({ start, disable }) {
             animationName: 'play',
             animationDuration: '0.4s',
             animationDirection: 'alternate',
-            animationIterationCount: 'infinite'
+            animationIterationCount: 'infinite',
+            animationTimingFunction: 'linear'
         }
     }
     return (
@@ -47,8 +48,8 @@ function Play({ start, disable }) {
                     display: disable ? 'none' : 'block',
                     width: 36,
                     height: 36,
-                    x: 38,
-                    y: 42
+                    x: 48,
+                    y: 48
                 }} />
         </div>
     )
