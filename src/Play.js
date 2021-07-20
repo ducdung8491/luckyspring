@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 function Play({ start, disable }) {
-    const warn = new Audio('/warning.wav')
+    // const warn = new Audio('/warning.wav')
     const style = (disable) => {
         const s = {
             backgroundSize: 'contain',
@@ -26,7 +26,7 @@ function Play({ start, disable }) {
                 if (disable) {
                     return
                 }
-                warn.play()
+                // warn.play()
                 start()
             }}>
             <motion.img

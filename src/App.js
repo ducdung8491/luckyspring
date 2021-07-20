@@ -179,12 +179,15 @@ function GiftCard({ open, onClose }) {
             overflowX: 'hidden',
             overflowY: 'scroll'
           }}>
-            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-            Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            <h3 style={{marginTop: 0}}>Lưu ý nhận thưởng</h3>
+            <div>
+              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            </div>
           </div>
         </div>
         <img
