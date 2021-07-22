@@ -107,7 +107,7 @@ function App() {
         </div>
       </div >
       <AddCountBox open={openBox === 'gift_1_turn'} count={1} onClose={() => setOpenbox(null)} />
-      <AddCountBox open={openBox === 'add_turn'} count={count} onClose={() => setOpenbox(null)} />
+      <StartBox open={openBox === 'add_turn'} count={count} onClose={() => setOpenbox(null)} />
       <GoodLuckBox open={openBox === 'good_luck'} count={count} onClose={() => setOpenbox(null)} />
       <GiftCard open={openBox === 'gift_card'} onClose={() => setOpenbox(null)} />
     </>
@@ -179,14 +179,9 @@ function GiftCard({ open, onClose }) {
             overflowX: 'hidden',
             overflowY: 'scroll'
           }}>
-            <h3 style={{marginTop: 0}}>Lưu ý nhận thưởng</h3>
+            <h3 style={{marginTop: 0}}>Xin chúc mừng!</h3>
             <div>
-              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
-              Box trúng thưởng thu nhỏ icon trung thưởng sang góc bên trái box or bên trên nút nhận. Còn khoảnh trắng của cái lixi là fill text
+            Bạn đã chiến thắng cơ hội NHẬN MIỄN PHÍ 500K vào tài khoản, MIỄN PHÍ toàn bộ 4G tốc độ cao, chat video call kết bạn vĩnh viễn. Thêm 200MB lướt net, chat facebook!. Vui lòng gửi xác nhận và chờ xử lý yêu cầu nhận thưởng của bạn.
             </div>
           </div>
         </div>
@@ -216,8 +211,8 @@ function GiftCard({ open, onClose }) {
           srcSet="goldbox.png" alt="Coin" />
         <motion.img
           onClick={() => {
+            window.lp.reward()
             onClose()
-            window.open('https://google.com', '_blank')
           }}
           style={{
             position: 'absolute',
@@ -300,14 +295,43 @@ function AddCountBox({ open, count, onClose }) {
           margin: '0 0 4px 0',
           color: '#fb401c'
         }}
-      >Lượt quay may mắn</h3>
+      >Chúc mừng bạn đã quay vào ô lì xì.</h3>
       <p
         style={{
           color: '#586069',
           marginTop: 8
         }}
-      >Bạn may mắn nhận được {count} lượt quay, sử dụng ngay để có được những phần quà hấp dẫn.</p>
-      <Button text="Quay" onClick={onClose} />
+      >Bạn đã chiến thắng thêm ({count}) lượt quay bấm [OK] để tiếp tục quay!.</p>
+      <Button text="OK" onClick={onClose} />
+    </Dialog>
+  )
+}
+
+function StartBox({ open, onClose }) {
+  return (
+    <Dialog isOpen={open} delay={0.2}>
+      <img
+        srcSet="gift1.png"
+        alt="Times"
+        style={{
+          width: 56,
+          height: 56,
+          marginBottom: 16
+        }}
+      />
+      <h3
+        style={{
+          margin: '0 0 4px 0',
+          color: '#fb401c'
+        }}
+      >QUAY MIỄN PHÍ NHẬN QUÀ NHƯ Ý</h3>
+      <p
+        style={{
+          color: '#586069',
+          marginTop: 8
+        }}
+      >Tham gia chương trình vòng quay may mắn! Để có cơ hội nhận nhiều phần quà giá trị với tổng giải thưởng rất lớn.</p>
+      <Button text="OK" onClick={onClose} />
     </Dialog>
   )
 }

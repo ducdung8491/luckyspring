@@ -9,7 +9,8 @@ function Button({ text, onClick }) {
                 padding: '4px 16px',
                 fontSize: 14,
                 color: 'white',
-                lineHeight: '20px'
+                lineHeight: '20px',
+                minWidth: 64
             }}
         >
             {text}

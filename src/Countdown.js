@@ -12,9 +12,11 @@ function Countdown({ complete, count }) {
             padding: 8,
             overflow: 'hidden',
             boxSizing: 'border-box',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontSize: 14
         }}>
-            Thời gian còn <b style={{ fontSize: 18 }}>00:{countdown.formatted}</b> nhanh tay nhận ngay giải thưởng
+            Bạn có <b style={{ fontSize: 16 }}>00:{countdown.formatted}</b> để tham gia trò chơi hết thời gian cơ hội sẽ được trao cho người khác.
+            <div style={{fontWeight: 'bold', marginTop: 4, fontSize: 14}}>Lưu ý: Giải thưởng này có hiệu lực trong thời gian có hạn nên hãy nhanh tay!</div>
         </div>
     )
 }
