@@ -16,7 +16,6 @@ function Countdown({ complete, count }) {
             fontSize: 14
         }}>
             Bạn có <b style={{ fontSize: 16 }}>00:{countdown.formatted}</b> để tham gia trò chơi hết thời gian cơ hội sẽ được trao cho người khác.
-            <div style={{fontWeight: 'bold', marginTop: 4, fontSize: 14}}>Lưu ý: Giải thưởng này có hiệu lực trong thời gian có hạn nên hãy nhanh tay!</div>
         </div>
     )
 }
