@@ -46,11 +46,23 @@ const randomScript = () => {
   return scripts[i]
 }
 
+const getNum = (k) => {
+  const v = localStorage.getItem(k)
+  if (!v) return null
+  return parseInt(v)
+}
+
 function App() {
+  const lsCount = getNum('lp_count')
+  const lsStep = getNum('lp_step')
   const [script] = useState(randomScript())
-  const [count, setCount] = useState(script.count)
-  const [step, setStep] = useState(0)
+  const [count, setCount] = useState(lsCount ?? script.count)
+  const [step, setStep] = useState(lsStep ?? 0)
   const [openBox, setOpenbox] = useState('add_turn')
+  console.log(count)
+  localStorage.setItem('lp_count', count)
+  localStorage.setItem('lp_step', step)
+  console.log(count)
   const pinComplete = useCallback((id) => {
     if (id === 0) {
       setOpenbox('good_luck')
@@ -60,12 +72,21 @@ function App() {
     }
     if (id === 4) {
       setOpenbox('gift_1_turn')
-      setCount(c => c + 1)
+      setCount(c => {
+        localStorage.setItem('lp_count', c + 1)
+        return c + 1
+      })
     }
-    setStep(s => s + 1)
+    setStep(s => {
+      localStorage.setItem('lp_step', s + 1)
+      return s + 1
+    })
   }, [])
   const start = useCallback(() => {
-    setCount(c => c - 1)
+    setCount(c => {
+      localStorage.setItem('lp_count', c - 1)
+      return c - 1
+    })
   }, [])
   return (
     <>
@@ -107,7 +128,7 @@ function App() {
         </div>
       </div >
       <AddCountBox open={openBox === 'gift_1_turn'} count={1} onClose={() => setOpenbox(null)} />
-      <StartBox open={openBox === 'add_turn'} count={count} onClose={() => setOpenbox(null)} />
+      <StartBox open={openBox === 'add_turn'} onClose={() => setOpenbox(null)} />
       <GoodLuckBox open={openBox === 'good_luck'} count={count} onClose={() => setOpenbox(null)} />
       <GiftCard open={openBox === 'gift_card'} onClose={() => setOpenbox(null)} />
     </>
@@ -179,9 +200,9 @@ function GiftCard({ open, onClose }) {
             overflowX: 'hidden',
             overflowY: 'scroll'
           }}>
-            <h3 style={{marginTop: 0}}>Xin chúc mừng!</h3>
+            <h3 style={{ marginTop: 0 }}>Xin chúc mừng!</h3>
             <div>
-            Bạn đã chiến thắng cơ hội NHẬN MIỄN PHÍ 500K vào tài khoản, MIỄN PHÍ toàn bộ 4G tốc độ cao, chat video call kết bạn vĩnh viễn. Thêm 200MB lướt net, chat facebook!. Vui lòng gửi xác nhận và chờ xử lý yêu cầu nhận thưởng của bạn.
+              Bạn đã chiến thắng cơ hội NHẬN MIỄN PHÍ 500K vào tài khoản, MIỄN PHÍ toàn bộ 4G tốc độ cao, chat video call kết bạn vĩnh viễn. Thêm 200MB lướt net, chat facebook!. Vui lòng gửi xác nhận và chờ xử lý yêu cầu nhận thưởng của bạn.
             </div>
           </div>
         </div>
