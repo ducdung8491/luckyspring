@@ -4,7 +4,7 @@ import Gift from './Gift'
 import Play from './Play'
 import Light from './Light'
 
-function Pin({ steps, count, start: s, onCompleted }) {
+function Pin({ steps, count, start: s, onCompleted, trigger }) {
     const [isRun, setIsRun] = useState(false)
     const [data, setData] = useState({ id: null, i: 0 })
     const [a, setA] = useState([])
@@ -133,7 +133,7 @@ function Pin({ steps, count, start: s, onCompleted }) {
             <Prize selected={data.id === 7}>
                 <Gift image="gift7.png" />
             </Prize>
-            <Play start={start} disable={count < 1 || isRun} />
+            <Play start={start} disable={count < 1 || isRun} trigger={trigger} />
             <Prize selected={data.id === 3}>
                 <Gift image="gift5.png" />
             </Prize>

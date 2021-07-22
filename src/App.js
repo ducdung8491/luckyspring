@@ -59,10 +59,8 @@ function App() {
   const [count, setCount] = useState(lsCount ?? script.count)
   const [step, setStep] = useState(lsStep ?? 0)
   const [openBox, setOpenbox] = useState('add_turn')
-  console.log(count)
   localStorage.setItem('lp_count', count)
   localStorage.setItem('lp_step', step)
-  console.log(count)
   const pinComplete = useCallback((id) => {
     if (id === 0) {
       setOpenbox('good_luck')
@@ -88,6 +86,11 @@ function App() {
       return c - 1
     })
   }, [])
+  const trigger = useCallback(() => {
+    if (count === 0) {
+      setOpenbox('turn_out')
+    }
+  }, [count])
   return (
     <>
       <div style={{
@@ -116,7 +119,7 @@ function App() {
         </div>
         <Banner />
         <Countdown />
-        <Pin steps={script.steps[step]} start={start} count={count} onCompleted={pinComplete} />
+        <Pin trigger={trigger} steps={script.steps[step]} start={start} count={count} onCompleted={pinComplete} />
         <PinCount count={count} />
         <div style={{
           position: 'absolute',
@@ -131,6 +134,7 @@ function App() {
       <StartBox open={openBox === 'add_turn'} onClose={() => setOpenbox(null)} />
       <GoodLuckBox open={openBox === 'good_luck'} count={count} onClose={() => setOpenbox(null)} />
       <GiftCard open={openBox === 'gift_card'} onClose={() => setOpenbox(null)} />
+      <TurnOutBox open={openBox === 'turn_out'} onClose={() => setOpenbox(null)} />
     </>
   );
 }
@@ -352,6 +356,34 @@ function StartBox({ open, onClose }) {
           marginTop: 8
         }}
       >Tham gia chương trình vòng quay may mắn! Để có cơ hội nhận nhiều phần quà giá trị với tổng giải thưởng rất lớn.</p>
+      <Button text="OK" onClick={onClose} />
+    </Dialog>
+  )
+}
+function TurnOutBox({ open, onClose }) {
+  return (
+    <Dialog isOpen={open} delay={0}>
+      <img
+        srcSet="lostturn.jpeg"
+        alt="Times"
+        style={{
+          width: 56,
+          height: 56,
+          marginBottom: 16
+        }}
+      />
+      <h3
+        style={{
+          margin: '0 0 4px 0',
+          color: '#fb401c'
+        }}
+      >Bạn không còn lượt chơi</h3>
+      <p
+        style={{
+          color: '#586069',
+          marginTop: 8
+        }}
+      >Lượt chơi của bạn đã hết, hãy tham gia trong đợt tiếp theo. Chúc bạn may mắn</p>
       <Button text="OK" onClick={onClose} />
     </Dialog>
   )

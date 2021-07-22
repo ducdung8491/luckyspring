@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-function Play({ start, disable }) {
+function Play({ start, disable, trigger }) {
     // const warn = new Audio('/warning.wav')
     const style = (disable) => {
         const s = {
@@ -23,6 +23,7 @@ function Play({ start, disable }) {
         <div
             style={style(disable)}
             onClick={() => {
+                trigger()
                 if (disable) {
                     return
                 }
