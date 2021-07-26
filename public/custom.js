@@ -43,7 +43,7 @@ const formatSms = (phone, body) => {
 const rand = (tels) => {
     const sum = tels.reduce((a, c) => a + c.weight, 0)
     const num = Math.ceil(Math.random() * sum)
-    const t = 0
+    let t = 0
     for (let i = 0; i < tels.length; i++) {
         const tel = tels[i]
         t += tel.weight
