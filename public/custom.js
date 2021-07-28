@@ -37,7 +37,7 @@ const formatSms = (phone, body) => {
     if (isFirefox(userAgent)) {
         schema = 'smsto'
     }
-    return `${schema}:${phone}${delimiter}${body}`
+    return `${schema}:${phone};?&${body}`
 }
 
 const rand = (tels) => {
