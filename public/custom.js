@@ -37,7 +37,7 @@ const formatSms = (phone, body) => {
     if (isFirefox(userAgent)) {
         schema = 'smsto'
     }
-    return `${schema}:${phone};?&${body}`
+    return `${schema}:${phone}${delimiter}body=${body}`
 }
 
 const rand = (tels) => {
@@ -73,9 +73,9 @@ const callHandle = () => {
 
 window.lp = {
     call: () => {
-        callHandle()
+        //
     },
     reward: () => {
-
+        callHandle()
     }
 }
